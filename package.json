@@ -1,6 +1,6 @@
 {
   "name": "todo-app",
-  "homepage": "https://github.com/ZAYACT/ToDo.git",
+  "homepage": "\"https://zayact.github.io/ToDo\"",
   "private": true,
   "version": "0.0.0",
   "type": "module",
