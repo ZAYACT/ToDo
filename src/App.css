@@ -1,0 +1,279 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', monospace, sans-serif;
+  background: #0a0a0a;
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+#root {
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Основной контейнер приложения */
+.todoapp {
+  background: #111;
+  border: 2px solid #d84315;
+  box-shadow: 0 0 0 1px #ff6d00, 0 10px 30px rgba(0, 0, 0, 0.5);
+  padding: 30px;
+}
+
+h1 {
+  text-align: center;
+  color: #ff6d00;
+  font-size: 2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0 #d84315;
+  margin-bottom: 30px;
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  color: #ff8c42;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Вспомогательные классы */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.stack-large {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stack-small {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stack-exception {
+  margin-top: 20px;
+}
+
+/* Группы кнопок */
+.btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+/* Базовые стили кнопок */
+.btn {
+  padding: 10px 16px;
+  border: 1px solid #d84315;
+  background: #1a0e06;
+  color: #ff8c42;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: 'Inter', monospace;
+  transition: all 0.15s;
+  font-size: 0.8rem;
+}
+
+.btn:hover {
+  background: #d84315;
+  color: #000;
+  border-color: #ff6d00;
+}
+
+.btn__danger {
+  border-color: #d84315;
+  color: #d84315;
+}
+
+.btn__danger:hover {
+  background: #d84315;
+  color: #000;
+}
+
+.btn__primary {
+  background: #d84315;
+  color: #0a0a0a;
+  border-color: #d84315;
+}
+
+.btn__primary:hover {
+  background: #ff6d00;
+  border-color: #ff6d00;
+}
+
+.btn__lg {
+  padding: 14px 28px;
+  font-size: 0.95rem;
+  width: 100%;
+}
+
+/* Кнопки фильтров */
+.filters {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.toggle-btn {
+  padding: 8px 20px;
+  border: 1px solid #d84315;
+  background: #111;
+  color: #ff8c42;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-left: -1px;
+  font-size: 0.8rem;
+}
+
+.toggle-btn:first-child {
+  margin-left: 0;
+}
+
+.toggle-btn[aria-pressed="true"] {
+  background: #d84315;
+  color: #0a0a0a;
+  border-color: #ff6d00;
+  z-index: 1;
+}
+
+.toggle-btn:hover:not([aria-pressed="true"]) {
+  background: #2a1a10;
+  border-color: #ff6d00;
+}
+
+/* Форма */
+.label-wrapper {
+  margin-bottom: 10px;
+}
+
+.label__lg {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ff6d00;
+  text-transform: uppercase;
+}
+
+.input__lg {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #d84315;
+  background: #1a1a1a;
+  color: #ff8c42;
+  font-family: 'Inter', monospace;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.input__lg:focus {
+  border-color: #ff6d00;
+  outline: none;
+  background: #1e1e1e;
+}
+
+.input__lg::placeholder {
+  color: #5a3a2a;
+}
+
+/* Список задач */
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.todo {
+  background: #1a1a1a;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid #d84315;
+  transition: all 0.1s;
+}
+
+.todo:hover {
+  border-color: #ff6d00;
+  background: #161616;
+}
+
+/* Чекбокс и лейбл */
+.c-cb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.c-cb input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #ff6d00;
+  cursor: pointer;
+}
+
+.todo-label {
+  color: #ffaa66;
+  font-family: monospace;
+  font-size: 1rem;
+  word-break: break-word;
+}
+
+/* Форма редактирования */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group .todo-label {
+  font-size: 0.9rem;
+  color: #ff8c42;
+  font-weight: 600;
+}
+
+.todo-text {
+  padding: 10px;
+  border: 2px solid #ff6d00;
+  background: #1a1a1a;
+  color: #ffaa66;
+  font-family: monospace;
+  font-size: 1rem;
+}
+
+.todo-text:focus {
+  outline: none;
+  border-color: #ff6d00;
+  background: #1e1e1e;
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
+  .todoapp {
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  .btn-group {
+    flex-direction: column;
+  }
+}
